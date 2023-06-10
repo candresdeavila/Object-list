@@ -1,28 +1,85 @@
-let guitarras = [
+const estadosguitars = [
+     {
+        tipodeGuitar: "Fender", modelos:[
+            {
+                nombre: "stratocaster", año: "1970"
+            },
+            {
+                nombre: "Telecaster", año: "1960"
+            }
+        ]
+     },
+     {
+        tipodeGuitar: "Gibson", modelos:[
+            {
+                nombre: "Gary", año:"1960"
+            },
+            {
+                nombre: "Slash", año:"1980"
+            }
+        ]
+     }
+]
+
+
+
+
+
+
+const guitars = [
     {
-    nombre: "Stratocaster",
-    marca: "Fender",
+    name: "Stratocaster",
+    brand: "Fender",
     color: "Blanco",
-    artistas: ["Eric Clapton", "Jimi Hendrix", "David Gilmour"]
+    artists: ["Eric Clapton", "Jimi Hendrix", "David Gilmour"]
     },
     {
-    nombre: "SG",
-    marca: "Gibson",
+    name: "SG",
+    brand: "Gibson",
     color: "Negro",
-    artistas: ["Angus Young", "Tony Iommi", "Derek Trucks"]
+    artists: ["Angus Young", "Tony Iommi", "Derek Trucks"]
     },
     {
-    nombre: "RG",
-    marca: "Ibanez",
+    name: "RG",
+    brand: "Ibanez",
     color: "Azul",
-    artistas: ["Steve Vai", "Joe Satriani", "Paul Gilbert"]
+    artists: ["Steve Vai", "Joe Satriani", "Paul Gilbert"]
     },
     {
-    nombre: "Pacific",
-    marca: "Yamaha",
+    name: "Pacific",
+    brand: "Yamaha",
     color: "Rojo",
-    artistas: ["Dave Mustaine", "Marty Friedman", "John Petrucci"]
+    artists: ["Dave Mustaine", "Marty Friedman", "John Petrucci"]
     }
     ];
     
-    console.log(guitarras);
+
+    const guitarsL = [
+        {
+            name: "Colguitar",
+            brand: "guitarras de Colombia",
+            Color: "Negro",
+            artists: "Noel Petro"
+        }
+        
+    ]
+
+    const WorldGuitars = [
+        guitars,
+        guitarsL
+    ]
+   
+   const ulItems = []
+
+   for (let index = 0; index < WorldGuitars.length; index++) {
+       const guitar = WorldGuitars[index];
+       const ilElement = "<li>" +
+                                  "<span>"+ "name:"  + guitar.name + "</span>"+
+                                  "<span>"+ "codigo de calidad:"  + guitar.estadosguitars + "</span>"+
+                         "</li>";
+        ulItems.push(ilElement);                   
+   }
+
+   document.querySelector('#app').innerHTML = "<ul>" + ulItems.join("") + "</ul>" 
+
+    console.log(ulItems, ulItems.join(""))
